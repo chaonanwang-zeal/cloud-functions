@@ -31,7 +31,7 @@ resource "google_storage_bucket_object" "function_code" {
 resource "google_cloudfunctions_function" "function1" {
   name                  = "sample_function"
   runtime               = "python310"
-  entry_point           = "main"
+  entry_point           = "trigger_dag_gcf"
   source_archive_bucket = google_storage_bucket.function_code_bucket.name
   source_archive_object = google_storage_bucket_object.function_code.name
   trigger_http          = true
