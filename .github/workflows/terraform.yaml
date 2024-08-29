@@ -31,9 +31,6 @@ jobs:
         workload_identity_provider: 'projects/<project-id>/locations/global/workloadIdentityPools/zdh-workflow-wi-pool/providers/github'
         service_account: zdh-workflow-action@<project-name>.iam.gserviceaccount.com
 
-    - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v1'
-
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
 
