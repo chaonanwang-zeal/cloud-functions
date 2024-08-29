@@ -28,8 +28,8 @@ jobs:
     - name: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
-        workload_identity_provider: 'projects/<project-id>/locations/global/workloadIdentityPools/zdh-workflow-wi-pool/providers/github'
-        service_account: zdh-workflow-action@<project-name>.iam.gserviceaccount.com
+        workload_identity_provider: 'projects/814992956970/locations/global/workloadIdentityPools/zdh-workflow-wi-pool/providers/github'
+        service_account: zdh-workflow-action@bold-seat-291901.iam.gserviceaccount.com
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
