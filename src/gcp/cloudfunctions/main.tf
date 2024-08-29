@@ -25,7 +25,7 @@ resource "google_storage_bucket" "function_code_bucket" {
 resource "google_storage_bucket_object" "function_code" {
   name   = "sample_code.zip"
   bucket = google_storage_bucket.function_code_bucket.name
-  source = "${path.module}/sample_code.zip"
+  source = "${path.module}/sample_code/sample_code.zip"
 }
 
 resource "google_cloudfunctions_function" "function1" {
