@@ -1,0 +1,5 @@
+project_id = "bold-seat-291901"
+project_number = "814992956970"
+region     = "asia-northeast1"
+service_account = "bold-seat-291901@appspot.gserviceaccount.com"
+trigger_bucket = "trigger_test_ou"

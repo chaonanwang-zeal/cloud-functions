@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - main
+      - dev
     paths:
       - src/gcp/cloudfunctions/**
 
@@ -36,14 +37,14 @@ jobs:
 
     - name: Zip Function Code
       run: |
-        cd sample_code/
-        zip -r sample_code.zip *
+        cd manual-input-data-triggerer/
+        zip -r function-source.zip *
 
     - name: Terraform Init
       run: terraform init
 
     - name: Terraform Plan
-      run: terraform plan
+      run: terraform plan  -var-file=env-vars/${{ github.ref == 'refs/heads/main' && 'prod.tfvars' || 'dev.tfvars' }}
 
     - name: Terraform Apply
-      run: terraform apply -auto-approve
+      run: terraform apply -var-file=env-vars/${{ github.ref == 'refs/heads/main' && 'prod.tfvars' || 'dev.tfvars' }} -auto-approve

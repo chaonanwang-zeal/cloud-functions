@@ -6,7 +6,7 @@ import composer2_airflow_rest_api
 
 
 @functions_framework.cloud_event
-def trigger_dag_gcf(cloud_event):
+def main(cloud_event):
     data = cloud_event.data
 
     event_id = cloud_event["id"]
