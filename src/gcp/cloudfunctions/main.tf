@@ -36,10 +36,6 @@ resource "google_cloudfunctions2_function" "default" {
   build_config {
     runtime     = "python311"
     entry_point = "main"
-    environment_variables = {
-        LOG_EXECUTION_ID = true
-        PROJECT_ID = var.project_id
-    }
     source {
       storage_source {
         bucket = "gcf-v2-sources-${var.project_number}-${var.region}"
@@ -52,7 +48,10 @@ resource "google_cloudfunctions2_function" "default" {
     max_instance_count = 1
     available_memory   = "256M"
     timeout_seconds    = 60
-    service_account_email = var.service_account
+    environment_variables = {
+        LOG_EXECUTION_ID = true
+        PROJECT_ID = var.project_id
+    }
   }
 
   event_trigger {
