@@ -28,7 +28,7 @@ jobs:
     - name: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
-        workload_identity_provider: 'projects/814992956970/locations/global/workloadIdentityPools/zdh-workflow-wi-pool/providers/github'
+        workload_identity_provider: 'projects/814992956970/locations/global/workloadIdentityPools/zdh-workflow-wi-pool2/providers/github'
         service_account: zdh-workflow-action@bold-seat-291901.iam.gserviceaccount.com
 
     - name: Setup Terraform
