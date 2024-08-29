@@ -36,7 +36,7 @@ jobs:
 
     - name: Zip Function Code
       run: |
-        cd sample_code
+        cd src/gcp/cloudfunctions/sample_code
         zip -r sample_code.zip *
 
     - name: Terraform Init
